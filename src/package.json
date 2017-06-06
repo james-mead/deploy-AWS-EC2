@@ -1,0 +1,23 @@
+{
+  "name": "Deploy-AWS-EC2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "tape tests/**/*-test.js | tap-diff"
+  },
+  "keywords": [],
+  "author": "James Mead",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "supertest": "^3.0.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.6.3"
+  }
+}
