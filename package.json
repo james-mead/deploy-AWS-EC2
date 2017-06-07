@@ -11,6 +11,9 @@
   "author": "James Mead",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.63.0",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "express-handlebars": "^3.0.0"
   },
