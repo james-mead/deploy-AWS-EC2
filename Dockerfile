@@ -2,6 +2,7 @@
 FROM node:4.4.5
 
 # Define environment variables
+ENV AWS_REGION ap-southeast-2
 
 # Copy source code
 COPY src/ /app

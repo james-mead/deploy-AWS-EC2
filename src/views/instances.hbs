@@ -1,0 +1,41 @@
+{{> header}}
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>AWS Instances</h3>
+      <hr />
+      {{#if Reservations}}
+        {{#each Reservations}}
+        <h4>Reservation ID: {{ReservationId}}</h4>
+        <p>
+          Number of Instances in Reservation: {{Instances.length}} <br />
+          Number of Instances is a Prime Number: {{primeNumber Instances.length}}
+        </p>
+          {{#each Instances}}
+            <ul>
+              {{#each this.Tags}}
+              <li>Name: {{this.Value}}</li>
+              {{/each}}
+              <li>Instance ID: {{this.InstanceId}}</li>
+              <li>Instance Type: {{this.InstanceType}}</li>
+              <li>Availability Zone: {{this.Placement.AvailabilityZone}}</li>
+              <li>Public IP Address: {{this.PublicIpAddress}}</li>
+              <li>Boot Image: {{this.ImageId}}</li>
+              <li>Instance State: {{this.State.Name}}</li>
+            </ul>
+            <form action="/delete" method="post">
+              <input type="hidden" name="instanceid" value={{this.InstanceId}} />
+              <button type="submit">Delete Instance</button>
+            </form>
+            <br />
+          {{/each}}
+        {{/each}}
+        {{else}}
+          <p>
+            No Instances, click <a href="/">here</a> to deploy an instance to AWS. 
+          </p>
+       {{/if}}
+    </div>
+  </div>
+</section>
